@@ -2,12 +2,11 @@
 #include <raylib.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include "entity.h"
+#include "ecs.h"
 #include <stdio.h>
 
-#define NULL_VECTOR2 (Vector2){-(1.0E12),-(1.0E12)};
 
-void InitEntityData(EntityData *data, int componentCount, int entityCount, size_t sizes[])
+void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[])
 {
     data->componentData = malloc(componentCount*sizeof(ComponentData));
     data->componentSizes = malloc(componentCount*sizeof(size_t));
@@ -26,6 +25,14 @@ void FreeEntityData(EntityData *data)
     for (int i = 0; i < data->componentCount; ++i)
     {
         free(data->componentData[i].data);
+    }
+}
+
+void DrawEntities(EntityData* data)
+{
+    for (int i = 0; i < data->componentData[COMPONENT_DRAW].count; ++i)
+    {
+        DrawTextureV(*((Texture2D**)data->componentData[COMPONENT_DRAW].data)[i], ((Vector2*)data->componentData[COMPONENT_POSITION].data)[i], WHITE);
     }
 }
 

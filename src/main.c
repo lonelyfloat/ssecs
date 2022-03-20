@@ -1,6 +1,6 @@
 #include <raylib.h>
 #include <stdio.h>
-#include "entity.h"
+#include "ecs/ecs.h"
 
 #ifdef __EMSCRIPTEN__
     #include <emscripten/emscripten.h>
@@ -17,15 +17,14 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
     
-    InitEntityData(&entityData, 2, 5, (size_t[]){sizeof(Vector2), sizeof(Texture2D*)});
-    Vector2 v = (Vector2){screenWidth/2, screenHeight/2};
-    SetECSData(&entityData, 0, COMPONENT_POSITION, v, Vector2);
-    Vector2 position;
-    GetECSData(&entityData, 0, COMPONENT_POSITION, &position, Vector2);
+    InitEntityData(&entityData, 5, 2, (size_t[]){sizeof(Vector2), sizeof(Texture2D*)});
     InitWindow(screenWidth, screenHeight, "ecs test");
-    printf("%f,%f\n", position.x, position.y);
-
-    
+    tex = LoadTexture("assets/gun.png");
+    for (int i = 0; i < 5; ++i)
+    {
+        SetECSData(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
+        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){i * 800/5, screenHeight/2}), Vector2);
+    }
 
     #ifndef __EMSCRIPTEN__
         while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -62,7 +61,7 @@ void UpdateDrawFrame(void)
 
             ClearBackground(RAYWHITE);
             DrawFPS(0,0);
-            //DrawEntities(&entityData);
+            DrawEntities(&entityData);
             //DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
         EndDrawing();

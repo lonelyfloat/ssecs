@@ -7,8 +7,9 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sat Mar 19 16:24:20 2022
+# Make data base, printed on Sun Mar 20 18:38:35 2022
 
 # Variables
 
@@ -20,6 +21,7 @@ SYSTEMDRIVE = C:
 JAVA_HOME = C:\emsdk\java\8.152_64bit
 # makefile (from 'Makefile', line 9)
 OUTPUT = $(PROJECT_NAME).exe
+ 
 # environment
 LC_ALL = C
 # environment
@@ -37,7 +39,7 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\super\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-20863430-6d19-469b-afc5-d57feed24193-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2c5a3e58-4749-4379-b466-a2b8f61f9b3c-sock
 # environment
 VSCODE_CWD = C:\Users\super\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -55,9 +57,9 @@ GOPATH = C:\Users\super\go
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # makefile (from 'Makefile', line 1)
-SOURCE_FILES = src/entity.c src/main.c
+SOURCE_FILES = src\ecs\entity.c src/main.c
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_44704_ZSBKXJSKOAGDOKXU
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_77616_FOVFAVRUORVCBIFR
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -117,7 +119,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 44704
+VSCODE_PID = 77616
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -154,6 +156,7 @@ MAKE = $(MAKE_COMMAND)
 PATH = /usr/bin:/c/Program Files/Oculus/Support/oculus-runtime:/c/MinGW/bin:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/ffmpeg/bin:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/ProgramData/chocolatey/bin:/c/Program Files/Git/cmd:/c/Program Files/CMake/bin:/c/Program Files/Go/bin:/c/emsdk/upstream/emscripten:/c/emsdk:/c/emsdk/node/14.15.5_64bit/bin:/c/Users/super/.cargo/bin:/c/Users/super/AppData/Local/Programs/Python/Python39/Scripts:/mingw64/bin:/c/Users/super/AppData/Local/Programs/Python/Python39:/c/Users/super/AppData/Local/Microsoft/WindowsApps:/c/Users/super/.dotnet/tools:/c/Users/super/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/super/AppData/Roaming/cabal/bin:/c/tools/ghc-9.0.1/bin:/c/tools/msys64:/c/Users/super/go/bin
 # environment
 ZES_ENABLE_SYSMAN = 1
+ 
 # environment
 COMPUTERNAME = MSI
 # environment
@@ -261,9 +264,10 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 
 # Directories
 
-# . (device 2392842953, inode 45598946227135358): 12 files, no impossibilities.
+# . (device 2392842953, inode 45598946227135358): 14 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+ 
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,7 +285,7 @@ debug:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-19 11:27:12.7061019
+#  Last modified 2022-03-20 18:38:34.5405109
 #  File has been updated.
 #  Successfully updated.
 
@@ -320,12 +324,12 @@ release(web):
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 163 B / avg = 8 B
-# current buf: size = 8162 B / used = 163 B / count = 19 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 179 B / avg = 8 B
+# current buf: size = 8162 B / used = 179 B / count = 21 / avg = 8 B
 
-# strcache performance: lookups = 26 / hit rate = 26%
+# strcache performance: lookups = 28 / hit rate = 25%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Sat Mar 19 16:24:20 2022
+# Load=21/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Sun Mar 20 18:38:35 2022
 
  

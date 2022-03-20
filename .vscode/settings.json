@@ -17,7 +17,9 @@
         "ostream": "c",
         "tuple": "c",
         "type_traits": "c",
-        "utility": "c"
+        "utility": "c",
+        "stdint.h": "c",
+        "ecs.h": "c"
     },
     "makefile.launchConfigurations": [
         {

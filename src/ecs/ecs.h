@@ -23,7 +23,7 @@ typedef struct EntityData
     size_t *componentSizes;
 } EntityData;
 
-void InitEntityData(EntityData *data, int componentCount, int entityCount, size_t sizes[]);
+void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
 #define SetECSData(entData, ID, type, val, valType) ((valType*)((entData)->componentData[type].data))[ID] = val;
@@ -33,6 +33,10 @@ void FreeEntityData(EntityData *data);
 void SetECSData(EntityData *data, uint8_t ID, ComponentType type, void *in);
 void GetECSData(EntityData *data, int ID, ComponentType type, void *out);
 */
+
+// systems
+
+void DrawEntities(EntityData* data);
 #endif
 
 

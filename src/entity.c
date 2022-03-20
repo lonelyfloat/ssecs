@@ -7,25 +7,6 @@
 
 #define NULL_VECTOR2 (Vector2){-(1.0E12),-(1.0E12)};
 
-void CreateComponent(EntityData* data, uint8_t componentID, uint16_t memberCount, ...)
-{
-    va_list ap;
-    va_start(ap, memberCount);
-    for(int i=0; i<memberCount; ++i)
-    {
-        
-    }
-    va_end(ap);
-}
-
-
-
-
-
-
-
-
-
 /*
 void InitEntityData(EntityData *data, int entityCount)
 {

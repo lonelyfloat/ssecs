@@ -7,54 +7,36 @@
 
 #define NULL_VECTOR2 (Vector2){-(1.0E12),-(1.0E12)};
 
-/*
-void InitEntityData(EntityData *data, int entityCount)
+void InitEntityData(EntityData *data, int componentCount, int entityCount, size_t sizes[])
 {
-    data->positions = malloc(entityCount * sizeof(Vector2));
-    data->velocities = malloc(entityCount * sizeof(Vector2));
-    data->textureIDs = malloc(entityCount * sizeof(Texture2D*));
-    data->entityCount = entityCount;
-    data->texturesCount = 0;
-    for (int i = 0; i < entityCount; ++i)
+    data->componentData = malloc(componentCount*sizeof(ComponentData));
+    data->componentSizes = malloc(componentCount*sizeof(size_t));
+    data->componentCount = componentCount;
+    for(int i=0; i<componentCount; ++i)
     {
-        data->positions[i] = NULL_VECTOR2;
-        data->velocities[i] = NULL_VECTOR2;
-        data->textureIDs[i] = NULL;
+        data->componentSizes[i] = sizes[i];
+        data->componentData[i].data = malloc(componentCount*sizes[i]);
     }
-}
-
-void InitEntityTextures(EntityData *data, int argCount, ...)
-{
-    va_list ap;
-    va_start(ap, argCount);
-    data->textures = malloc(argCount * sizeof(Texture2D));    
-    for (int i = 0; i < argCount; ++i)
-    {
-        
-        data->textures[i] = va_arg(ap, Texture2D);
-    }
-    va_end(ap);   
-}
-
-void DrawEntities(EntityData *data)
-{
-    for (int i = 0; i < data->texturesCount; ++i)
-    {
-        DrawTextureV(*data->textureIDs[i], data->positions[i], WHITE);
-    }
-}
-
-void SetEntityTexture(EntityData *data, uint8_t ID, uint8_t textureID)
-{    
-    data->textureIDs[ID] = &data->textures[textureID];
-    data->texturesCount++;
 }
 
 void FreeEntityData(EntityData *data)
 {
-    free(data->positions);
-    free(data->textureIDs);
-    free(data->textures);
-    free(data->velocities);
+    free(data->componentData);
+    free(data->componentSizes);
+    for (int i = 0; i < data->componentCount; ++i)
+    {
+        free(data->componentData[i].data);
+    }
+}
+
+/* TODO: fix these!
+void SetECSData(EntityData *data, uint8_t ID, ComponentType type, void *in)
+{
+    ((Vector2*)(data->componentData[type].data))[ID] = *(Vector2*)(in);
+}
+
+void GetECSData(EntityData *data, int ID, ComponentType type, void *out)
+{
+    *(Vector2*)(out) = *((Vector2 *)data->componentData[ID].data);
 }
 */

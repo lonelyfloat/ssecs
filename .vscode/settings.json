@@ -9,7 +9,15 @@
         "stdio.h": "c",
         "emscripten.h": "c",
         "stdarg.h": "c",
-        "entity.h": "c"
+        "entity.h": "c",
+        "stdlib.h": "c",
+        "array": "c",
+        "functional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c"
     },
     "makefile.launchConfigurations": [
         {

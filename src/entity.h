@@ -3,93 +3,37 @@
 
 #include <stdint.h>
 #include <raylib.h>
-#include <stdarg.h>
 
-typedef struct ComponentStorage
+typedef enum ComponentType
+{
+    COMPONENT_POSITION,
+    COMPONENT_DRAW
+} ComponentType;
+
+typedef struct ComponentData
 {
     void* data;
     uint32_t count;
-} ComponentStorage;
+} ComponentData;
 
 typedef struct EntityData
 {
-    
-    Vector2 *positions;
-    Vector2 *velocities;
-    Texture2D **textureIDs;
-    Texture2D *textures;
+    uint8_t componentCount;
+    ComponentData* componentData;
+    size_t *componentSizes;
 } EntityData;
 
-void InitEntityData(EntityData *data, int entityCount);
-void InitEntityTextures(EntityData *data, int argCount, ...);
-void SetEntityTexture(EntityData *data, uint8_t ID, uint8_t textureID);
-void DrawEntities(EntityData *data);
+void InitEntityData(EntityData *data, int componentCount, int entityCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
-/*
 
+#define SetECSData(entData, ID, type, val, valType) ((valType*)((entData)->componentData[type].data))[ID] = val;
+#define GetECSData(entData, ID, type, val, valType) *(Vector2*)(val) = *((Vector2 *)(entData)->componentData[ID].data);
 
-
-void CreateComponent(&data, 0, 2, TYPE_VEC2, TYPE_FLOAT);
-void CreateComponent(EntityData* data, uint8_t componentID, uint16_t memberCount, ...);
-
-
-
-
+/* fix these later!
+void SetECSData(EntityData *data, uint8_t ID, ComponentType type, void *in);
+void GetECSData(EntityData *data, int ID, ComponentType type, void *out);
 */
 #endif
 
 
 
-/*----------------------------------------------------------------
-typedef enum MemberType
-{
-    TYPE_INT,
-    TYPE_UINT,
-    TYPE_FLOAT,
-    TYPE_CHARPTR,
-    TYPE_VEC2,
-    TYPE_TEX2D,
-    TYPE_RECT,
-    TYPE_COLOR
-} mType;
-
-typedef struct ComponentMember 
-{
-    enum mType
-    {
-        TYPE_INT,
-        TYPE_UINT,
-        TYPE_FLOAT,
-        TYPE_CHARPTR,
-        TYPE_VEC2,
-        TYPE_TEX2D,
-        TYPE_RECT,
-        TYPE_COLOR
-    } type;
-
-    union ComponentMemberData
-    {
-        int32_t i;
-        uint32_t u;
-        float f;
-        char *cptr;
-        Vector2 v2;
-        Texture2D tex2D;
-        Rectangle rect;
-        Color color;
-    } data;
-} ComponentMember;
-
-typedef struct ComponentData 
-{
-    ComponentMember **members; // Members for the components
-    uint16_t count; // how many of this component there are
-} ComponentData;
-
-typedef struct EntityData
-{
-    int entityCount;
-    uint8_t componentCount;
-    ComponentData *componentData;
-} EntityData;
-*/

@@ -1,4 +1,4 @@
-SOURCE_FILES ?= src/ecs/entity.c src/main.c
+SOURCE_FILES ?= src/ecs/systems.c src/ecs/ecs.c src/main.c
 PROJECT_NAME ?= game
 
 CFLAGS ?= -Os -std=c99 -Wall -Isrc/include -Lsrc/lib/

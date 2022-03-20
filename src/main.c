@@ -1,15 +1,19 @@
 #include <raylib.h>
 #include <stdio.h>
 #include "ecs/ecs.h"
+#include "ecs/components.h"
 
 #ifdef __EMSCRIPTEN__
     #include <emscripten/emscripten.h>
 #endif
 
 EntityData entityData;
+Texture2D tex;
+Vector2 e;
+
+const int entCount = 15;
 
 void UpdateDrawFrame(void);
-Texture2D tex;
 int main(void)
 {
     // Initialization
@@ -17,13 +21,14 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
     
-    InitEntityData(&entityData, 5, 2, (size_t[]){sizeof(Vector2), sizeof(Texture2D*)});
+    InitEntityData(&entityData, entCount, 3, (size_t[]){sizeof(Vector2), sizeof(Texture2D*), sizeof(MoveComponent)});
     InitWindow(screenWidth, screenHeight, "ecs test");
     tex = LoadTexture("assets/gun.png");
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < entCount; ++i)
     {
         SetECSData(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
-        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){i * 800/5, screenHeight/2}), Vector2);
+        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/entCount) + 15, (screenHeight/2)}), Vector2);
+        SetECSData(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
     }
 
     #ifndef __EMSCRIPTEN__
@@ -52,9 +57,8 @@ void UpdateDrawFrame(void)
         // Main game loop
         // Update
         //----------------------------------------------------------------------------------
-        
+        BounceEntities(&entityData);
         //----------------------------------------------------------------------------------
-
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();

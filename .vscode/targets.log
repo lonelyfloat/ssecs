@@ -9,11 +9,12 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Mar 20 18:38:35 2022
+# Make data base, printed on Sun Mar 20 19:13:05 2022
 
 # Variables
 
 # environment
+ 
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
@@ -21,7 +22,6 @@ SYSTEMDRIVE = C:
 JAVA_HOME = C:\emsdk\java\8.152_64bit
 # makefile (from 'Makefile', line 9)
 OUTPUT = $(PROJECT_NAME).exe
- 
 # environment
 LC_ALL = C
 # environment
@@ -57,7 +57,7 @@ GOPATH = C:\Users\super\go
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # makefile (from 'Makefile', line 1)
-SOURCE_FILES = src\ecs\entity.c src/main.c
+SOURCE_FILES = src/ecs/systems.c src/ecs/ecs.c src/main.c
 # environment
 CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_77616_FOVFAVRUORVCBIFR
 # environment
@@ -156,7 +156,6 @@ MAKE = $(MAKE_COMMAND)
 PATH = /usr/bin:/c/Program Files/Oculus/Support/oculus-runtime:/c/MinGW/bin:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/ffmpeg/bin:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/ProgramData/chocolatey/bin:/c/Program Files/Git/cmd:/c/Program Files/CMake/bin:/c/Program Files/Go/bin:/c/emsdk/upstream/emscripten:/c/emsdk:/c/emsdk/node/14.15.5_64bit/bin:/c/Users/super/.cargo/bin:/c/Users/super/AppData/Local/Programs/Python/Python39/Scripts:/mingw64/bin:/c/Users/super/AppData/Local/Programs/Python/Python39:/c/Users/super/AppData/Local/Microsoft/WindowsApps:/c/Users/super/.dotnet/tools:/c/Users/super/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/super/AppData/Roaming/cabal/bin:/c/tools/ghc-9.0.1/bin:/c/tools/msys64:/c/Users/super/go/bin
 # environment
 ZES_ENABLE_SYSMAN = 1
- 
 # environment
 COMPUTERNAME = MSI
 # environment
@@ -165,6 +164,7 @@ EMSDK_NODE = C:\emsdk\node\14.15.5_64bit\bin\node.exe
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
+ 
 # environment
 _MSYS2_PREFIX = x86_64
 # environment
@@ -266,7 +266,6 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 
 # . (device 2392842953, inode 45598946227135358): 14 files, no impossibilities.
 
- 
 # 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
@@ -285,7 +284,7 @@ debug:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-20 18:38:34.5405109
+#  Last modified 2022-03-20 19:13:05.1414838
 #  File has been updated.
 #  Successfully updated.
 
@@ -296,6 +295,7 @@ Makefile:
 #  File has not been updated.
 
 # Not a target:
+ 
 all:
 #  Command line target.
 #  Implicit rule search has been done.
@@ -330,6 +330,6 @@ release(web):
 # strcache performance: lookups = 28 / hit rate = 25%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Sun Mar 20 18:38:35 2022
+# Finished Make data base on Sun Mar 20 19:13:05 2022
 
  

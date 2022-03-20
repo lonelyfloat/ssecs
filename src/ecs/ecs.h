@@ -7,6 +7,7 @@
 typedef enum ComponentType
 {
     COMPONENT_POSITION,
+    COMPONENT_MOVE,
     COMPONENT_DRAW
 } ComponentType;
 
@@ -26,8 +27,10 @@ typedef struct EntityData
 void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
-#define SetECSData(entData, ID, type, val, valType) ((valType*)((entData)->componentData[type].data))[ID] = val;
-#define GetECSData(entData, ID, type, val, valType) *(Vector2*)(val) = *((Vector2 *)(entData)->componentData[ID].data);
+
+#define GetECSData(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[ID]
+#define SetECSData(entData, ID, type, val, valType) GetECSData(entData, ID, type, valType) = val;
+//((valType *)((entData)->componentData[type].data))[ID];
 
 /* fix these later!
 void SetECSData(EntityData *data, uint8_t ID, ComponentType type, void *in);
@@ -36,7 +39,6 @@ void GetECSData(EntityData *data, int ID, ComponentType type, void *out);
 
 // systems
 
-void DrawEntities(EntityData* data);
 #endif
 
 

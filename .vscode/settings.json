@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "raylib.h": "c",
+        "raygui.h": "c",
+        "effects.h": "c",
+        "malloc.h": "c",
+        "raymath.h": "c",
+        "limits": "c",
+        "stdio.h": "c",
+        "emscripten.h": "c",
+        "stdarg.h": "c",
+        "entity.h": "c"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\BaseProject",
+            "binaryPath": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\BaseProject\\game.exe",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS",
+            "binaryPath": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS\\game.exe",
+            "binaryArgs": []
+        }
+    ]
+}

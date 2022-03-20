@@ -1,0 +1,5 @@
+make.exe debug --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/c/Users/super/OneDrive/Desktop/Programming/Gamedev/raylib/WIP/ECS'
+gcc src/entity.c src/main.c -o game.exe -Os -std=c99 -Wall -Isrc/include -Lsrc/lib/desktop -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm
+make: Leaving directory '/c/Users/super/OneDrive/Desktop/Programming/Gamedev/raylib/WIP/ECS'
+ 

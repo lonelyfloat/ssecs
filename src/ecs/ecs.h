@@ -3,14 +3,15 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef uint32_t EntityID;
 
 typedef enum ComponentType
 {
     COMPONENT_POSITION,
+    COMPONENT_DRAW,
     COMPONENT_MOVE,
-    COMPONENT_DRAW
 } ComponentType;
 
 typedef struct ComponentData
@@ -27,7 +28,7 @@ typedef struct EntityData
     ComponentData* componentData;
 } EntityData;
 
-void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[]);
+void InitEntityData(EntityData *data, uint32_t entityCount, uint8_t componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
 bool HasComponent(EntityData *data, ComponentType type, EntityID ID);

@@ -1,4 +1,5 @@
 #include <math.h>
+#include <raylib.h>
 #include "components.h"
 
 #define GetECSDataIndex(entData, index, type, valType) ((valType*)(entData)->componentData[type].data)[index]

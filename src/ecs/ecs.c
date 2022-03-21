@@ -2,7 +2,7 @@
 #include "ecs.h"
 
 
-void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[])
+void InitEntityData(EntityData *data, uint32_t entityCount, uint8_t componentCount, size_t sizes[])
 {
     data->componentData = malloc(componentCount*sizeof(ComponentData));
     data->componentCount = componentCount;

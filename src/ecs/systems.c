@@ -1,9 +1,10 @@
-#include "components.h"
 #include <math.h>
+#include "components.h"
 
-#define GetECSDataIndex(entData, index, type, valType) ((valType*)(entData)->componentData[type].data)[index]                               // Input index (found in sparse), gives data  
-#define GetECSDataID(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]] // Input Entity ID (found in dense), gives data                                                    
-
+#define GetECSDataIndex(entData, index, type, valType) ((valType*)(entData)->componentData[type].data)[index]
+// Input index (found in sparse), gives data                                 
+#define GetECSDataID(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]]                                                     
+// Input Entity ID (found in dense), gives data
 void BounceEntities(EntityData* data)
 {
     for (int i = 0; i < data->componentData[COMPONENT_MOVE].count; ++i)

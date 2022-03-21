@@ -1,13 +1,12 @@
 #ifndef H_COMPONENTS
 #define H_COMPONENTS
 
-#include <raylib.h>
 #include "ecs.h"
 
 typedef struct MoveComponent
 {
-    float freq;
-    float magnitude;
+    float freq;      // sinwave frequency
+    float magnitude; // sinwave magnitude
 } MoveComponent;
 
 void DrawEntities(EntityData* data);

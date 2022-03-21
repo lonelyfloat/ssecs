@@ -1,9 +1,5 @@
-#include <stdint.h>
-#include <raylib.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include "ecs.h"
-#include <stdio.h>
 
 
 void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[])
@@ -34,15 +30,3 @@ bool HasComponent(EntityData *data, ComponentType type, EntityID ID)
 {
     return ((data->componentData[type].sparse[ID] < data->componentData[type].count) && (data->componentData[type].dense[data->componentData[type].sparse[ID]] == ID));
 }
-
-/* TODO: fix these!
-void SetECSData(EntityData *data, uint8_t ID, ComponentType type, void *in)
-{
-    ((Vector2*)(data->componentData[type].data))[ID] = *(Vector2*)(in);
-}
-
-void GetECSData(EntityData *data, int ID, ComponentType type, void *out)
-{
-    *(Vector2*)(out) = *((Vector2 *)data->componentData[ID].data);
-}
-*/

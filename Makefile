@@ -2,7 +2,7 @@ SOURCE_FILES ?= src/ecs/systems.c src/ecs/ecs.c src/main.c
 PROJECT_NAME ?= demo
 
 CFLAGS ?= -Os -std=c99 -Wall -Isrc/include -Lsrc/lib/
-WEBFLAGS = web -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --shell-file template.html  # --preload-file assets
+WEBFLAGS = web -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --shell-file config/template.html  # --preload-file assets
 PCFLAGS = desktop -DPLATFORM_DESKTOP
 RAYLIB_LOC = src/lib/desktop
 LDFLAGS ?= -lraylib

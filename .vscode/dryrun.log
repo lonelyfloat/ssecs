@@ -1,5 +1,5 @@
-make.exe release(web) --dry-run --keep-going --print-directory
+make.exe debug --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/c/Users/super/OneDrive/Desktop/Programming/Gamedev/raylib/WIP/ECS'
-emcc -static src/ecs/systems.c src/ecs/ecs.c src/main.c -o  builds/web/demo.html -Os -std=c99 -Wall -Isrc/include -Lsrc/lib/web -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --shell-file template.html   -lraylib
+gcc src/ecs/systems.c src/ecs/ecs.c src/main.c -o builds/demo.exe -Os -std=c99 -Wall -Isrc/include -Lsrc/lib/desktop -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm
 make: Leaving directory '/c/Users/super/OneDrive/Desktop/Programming/Gamedev/raylib/WIP/ECS'
  

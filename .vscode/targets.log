@@ -7,9 +7,8 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Mar 21 17:21:08 2022
+# Make data base, printed on Mon Mar 21 17:32:10 2022
 
 # Variables
 
@@ -25,7 +24,6 @@ OUTPUT = $(PROJECT_NAME).exe
 LC_ALL = C
 # environment
 _MSYS2_BASH = C:\tools\msys64\usr\bin\bash.exe
- 
 # environment
 OCULUSBASE = C:\Program Files\Oculus\
 # makefile (from 'Makefile', line 2)
@@ -39,9 +37,11 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\super\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3d20f352-848d-420c-9dd8-d44b54a8ce7b-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-fa9988f7-1dcc-4398-9a0c-1b03c7aae64b-sock
 # environment
-VSCODE_CWD = C:\Users\super\AppData\Local\Programs\Microsoft VS Code
+WSLENV = WT_SESSION::WT_PROFILE_ID
+# environment
+VSCODE_CWD = C:\Users\super\OneDrive\Desktop\Programming\Gamedev\raylib\BaseProject
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -49,7 +49,7 @@ SYSTEMROOT = C:\WINDOWS
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Users\super\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := make
 # environment
@@ -122,6 +122,8 @@ VSCODE_VERBOSE_LOGGING = true
 VSCODE_PID = 85692
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+WT_PROFILE_ID = {61c54bbd-c2c6-5271-96e7-009a87ff44bf}
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +155,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/bin:/c/Program Files/Oculus/Support/oculus-runtime:/c/MinGW/bin:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/ffmpeg/bin:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/ProgramData/chocolatey/bin:/c/Program Files/Git/cmd:/c/Program Files/CMake/bin:/c/Program Files/Go/bin:/c/emsdk/upstream/emscripten:/c/emsdk:/c/emsdk/node/14.15.5_64bit/bin:/c/Users/super/.cargo/bin:/c/Users/super/AppData/Local/Programs/Python/Python39/Scripts:/mingw64/bin:/c/Users/super/AppData/Local/Programs/Python/Python39:/c/Users/super/AppData/Local/Microsoft/WindowsApps:/c/Users/super/.dotnet/tools:/c/Users/super/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/super/AppData/Roaming/cabal/bin:/c/tools/ghc-9.0.1/bin:/c/tools/msys64:/c/Users/super/go/bin
+PATH = /c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe:/usr/bin:/c/Program Files/Oculus/Support/oculus-runtime:/c/MinGW/bin:/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64_win/compiler:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/ffmpeg/bin:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/ProgramData/chocolatey/bin:/c/Program Files/Git/cmd:/c/Program Files/CMake/bin:/c/Program Files/Go/bin:/c/emsdk/upstream/emscripten:/c/emsdk:/c/emsdk/node/14.15.5_64bit/bin:/c/Users/super/.cargo/bin:/c/Users/super/AppData/Local/Programs/Python/Python39/Scripts:/mingw64/bin:/c/Users/super/AppData/Local/Programs/Python/Python39:/c/Users/super/AppData/Local/Microsoft/WindowsApps:/c/Users/super/.dotnet/tools:/c/Users/super/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/super/AppData/Roaming/cabal/bin:/c/tools/ghc-9.0.1/bin:/c/tools/msys64:/c/Users/super/go/bin
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
@@ -168,9 +170,10 @@ MAKEFILES :=
 _MSYS2_PREFIX = x86_64
 # environment
 PROMPT = $P$G
- 
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132745520912869422
+# environment
+WT_SESSION = 1ecbe633-1baf-4c0b-aba1-4bd3aa78b2a6
 # environment
 LOGONSERVER = \\MSI
 # environment
@@ -184,7 +187,7 @@ COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
 # automatic
 +F = $(notdir $+)
 # environment
@@ -220,7 +223,7 @@ PROCESSOR_ARCHITECTURE = AMD64
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # makefile (from 'Makefile', line 5)
-WEBFLAGS = web -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --shell-file template.html  
+WEBFLAGS = web -s USE_GLFW=3 -s TOTAL_MEMORY=67108864 -s FORCE_FILESYSTEM=1 --shell-file config/template.html  
 # environment
 HOME = /home/super
 # environment
@@ -245,6 +248,10 @@ SUFFIXES :=
 ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
@@ -256,7 +263,7 @@ CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 # variable set hash-table stats:
-# Load=120/1024=12%, Rehash=0, Collisions=14/152=9%
+# Load=125/1024=12%, Rehash=0, Collisions=16/157=10%
 
 # Pattern-specific Variable Values
 
@@ -284,7 +291,7 @@ debug:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-21 17:20:37.5886809
+#  Last modified 2022-03-21 17:31:09.6841271
 #  File has been updated.
 #  Successfully updated.
 
@@ -311,7 +318,6 @@ release(windows):
 release(web):
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	emcc -static $(SOURCE_FILES) -o  builds/web/$(PROJECT_NAME).html $(CFLAGS)$(WEBFLAGS) $(LDFLAGS)
@@ -324,12 +330,12 @@ release(web):
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 142 B / avg = 8 B
-# current buf: size = 8162 B / used = 142 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 135 B / avg = 7 B
+# current buf: size = 8162 B / used = 135 B / count = 17 / avg = 7 B
 
 # strcache performance: lookups = 24 / hit rate = 29%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Mon Mar 21 17:21:08 2022
+# Finished Make data base on Mon Mar 21 17:32:10 2022
 
  

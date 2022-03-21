@@ -14,6 +14,7 @@ Vector2 e;
 const int entCount = 15;
 
 void UpdateDrawFrame(void);
+
 int main(void)
 {
     // Initialization
@@ -27,8 +28,8 @@ int main(void)
     for (int i = 0; i < entCount; ++i)
     {
         SetECSData(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
-        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/entCount) + 15, (screenHeight/2)}), Vector2);
-        SetECSData(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
+        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/entCount), (screenHeight/2)}), Vector2);
+        if(i != 3) SetECSData(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
     }
 
     #ifndef __EMSCRIPTEN__

@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <raylib.h>
 
+typedef uint32_t EntityID;
+
 typedef enum ComponentType
 {
     COMPONENT_POSITION,
@@ -14,6 +16,8 @@ typedef enum ComponentType
 typedef struct ComponentData
 {
     void* data;
+    EntityID *dense; // Get IDs by using index here
+    EntityID *sparse; // Get indices by using ID here
     uint32_t count;
 } ComponentData;
 
@@ -27,8 +31,9 @@ typedef struct EntityData
 void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
-
-#define GetECSData(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[ID]
+bool HasComponent(EntityData *data, ComponentType type, EntityID ID);
+// (((char*)data->componentData[type].data) + (ID * sizes[type]))
+#define GetECSData(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]]
 #define SetECSData(entData, ID, type, val, valType) GetECSData(entData, ID, type, valType) = val;
 //((valType *)((entData)->componentData[type].data))[ID];
 

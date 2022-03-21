@@ -14,6 +14,7 @@ void DrawEntities(EntityData* data)
 {
     for (int i = 0; i < data->componentData[COMPONENT_DRAW].count; ++i)
     {
-        DrawTextureV(*((Texture2D**)data->componentData[COMPONENT_DRAW].data)[i], ((Vector2*)data->componentData[COMPONENT_POSITION].data)[i], WHITE);
+        if(HasComponent(data, COMPONENT_POSITION, data->componentData[COMPONENT_DRAW].sparse[i]))
+            DrawTextureV(*((Texture2D**)data->componentData[COMPONENT_DRAW].data)[i], ((Vector2*)data->componentData[COMPONENT_POSITION].data)[i], WHITE);
     }
 }

@@ -11,7 +11,7 @@ void BounceEntities(EntityData* data)
         if(HasComponent(data, COMPONENT_POSITION, data->componentData[COMPONENT_MOVE].dense[i]))
         {
         GetECSDataID(data, data->componentData[COMPONENT_MOVE].dense[i], COMPONENT_POSITION, Vector2).y += 
-        (sinf(GetTime() * GetECSDataIndex(data, i, COMPONENT_MOVE, MoveComponent).freq) * GetECSDataIndex(data, i, COMPONENT_MOVE, MoveComponent).magnitude) * GetFrameTime();
+        sinf(GetTime() * GetECSDataIndex(data, i, COMPONENT_MOVE, MoveComponent).freq) * GetECSDataIndex(data, i, COMPONENT_MOVE, MoveComponent).magnitude * GetFrameTime();
         }
     }
     

@@ -7,8 +7,9 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Mar 21 07:58:13 2022
+# Make data base, printed on Mon Mar 21 17:12:43 2022
 
 # Variables
 
@@ -37,11 +38,9 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\super\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-2bf8e969-d923-4ead-b234-b47a28b11da4-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3d20f352-848d-420c-9dd8-d44b54a8ce7b-sock
 # environment
-WSLENV = WT_SESSION::WT_PROFILE_ID
-# environment
-VSCODE_CWD = C:\WINDOWS\System32
+VSCODE_CWD = C:\Users\super\AppData\Local\Programs\Microsoft VS Code
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -59,7 +58,7 @@ GOPATH = C:\Users\super\go
 # makefile (from 'Makefile', line 1)
 SOURCE_FILES = src/ecs/systems.c src/ecs/ecs.c src/main.c
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_67668_KJBEKUJNZTAMOIRJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_85692_YIJQPLKJHWQTIHBJ
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -119,11 +118,9 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 67668
+VSCODE_PID = 85692
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-WT_PROFILE_ID = {61c54bbd-c2c6-5271-96e7-009a87ff44bf}
 # automatic
 *F = $(notdir $*)
 # environment
@@ -172,8 +169,6 @@ _MSYS2_PREFIX = x86_64
 PROMPT = $P$G
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132745520912869422
-# environment
-WT_SESSION = 5832a314-70ff-4106-9ad0-440e27ae5ca8
 # environment
 LOGONSERVER = \\MSI
 # environment
@@ -230,7 +225,6 @@ HOME = /home/super
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 ELECTRON_RUN_AS_NODE = 1
- 
 # environment
 TEMP = /c/Users/super/AppData/Local/Temp
 # environment
@@ -249,10 +243,6 @@ SUFFIXES :=
 ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
-# environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
@@ -260,11 +250,12 @@ MIC_LD_LIBRARY_PATH = c:\Program Files (x86)\Common Files\Intel\Shared Libraries
 # environment
 PROCESSOR_REVISION = 9e0d
 # environment
+ 
 CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 # variable set hash-table stats:
-# Load=125/1024=12%, Rehash=0, Collisions=16/157=10%
+# Load=120/1024=12%, Rehash=0, Collisions=14/152=9%
 
 # Pattern-specific Variable Values
 
@@ -337,6 +328,6 @@ release(web):
 # strcache performance: lookups = 28 / hit rate = 25%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Mon Mar 21 07:58:13 2022
+# Finished Make data base on Mon Mar 21 17:12:43 2022
 
  

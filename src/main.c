@@ -12,6 +12,7 @@ Texture2D tex;
 Vector2 e;
 
 const int maxEntities = 15;
+// ~80k entities before it goes below 60fps 
 
 void UpdateDrawFrame(void);
 
@@ -29,11 +30,9 @@ int main(void)
     for (int i = 0; i < maxEntities; ++i)
     {
         AddComponent(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
-        AddComponent(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/maxEntities), (screenHeight/2)}), Vector2);
-        if(i != 3)
-        {
+        AddComponent(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/maxEntities) + 20, (screenHeight/2)}), Vector2);
+        if(GetRandomValue(1,maxEntities) < 9)
             AddComponent(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
-        }        
         
     }
     

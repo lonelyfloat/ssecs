@@ -11,7 +11,7 @@ EntityData entityData;
 Texture2D tex;
 Vector2 e;
 
-const int entCount = 15;
+const int maxEntities = 15;
 
 void UpdateDrawFrame(void);
 
@@ -22,16 +22,21 @@ int main(void)
     const int screenWidth = 800;
     const int screenHeight = 450;
     
-    InitEntityData(&entityData, entCount, 3, (size_t[]){sizeof(Vector2), sizeof(Texture2D*), sizeof(MoveComponent)});
+    InitEntityData(&entityData, maxEntities, 3, (size_t[]){sizeof(Vector2), sizeof(Texture2D*), sizeof(MoveComponent)});
     InitWindow(screenWidth, screenHeight, "ecs test");
     tex = LoadTexture("assets/gun.png");
-    for (int i = 0; i < entCount; ++i)
+    
+    for (int i = 0; i < maxEntities; ++i)
     {
-        SetECSData(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
-        SetECSData(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/entCount), (screenHeight/2)}), Vector2);
-        if(i != 3) SetECSData(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
+        AddComponent(&entityData, i, COMPONENT_DRAW, &tex, Texture2D*);
+        AddComponent(&entityData, i, COMPONENT_POSITION, ((Vector2){(i * 800/maxEntities), (screenHeight/2)}), Vector2);
+        if(i != 3)
+        {
+            AddComponent(&entityData, i, COMPONENT_MOVE, ((MoveComponent){2, 50}), MoveComponent);
+        }        
+        
     }
-
+    
     #ifndef __EMSCRIPTEN__
         while (!WindowShouldClose())    // Detect window close button or ESC key
         {

@@ -22,7 +22,8 @@
         "ecs.h": "c",
         "string": "c",
         "string_view": "c",
-        "components.h": "c"
+        "components.h": "c",
+        "algorithm": "c"
     },
     "makefile.launchConfigurations": [
         {

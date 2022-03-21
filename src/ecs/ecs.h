@@ -32,9 +32,15 @@ void InitEntityData(EntityData *data, int entityCount,int componentCount, size_t
 void FreeEntityData(EntityData *data);
 
 bool HasComponent(EntityData *data, ComponentType type, EntityID ID);
+//void AddComponent(EntityData *data, ComponentType type, EntityID ID, void* addedData);
 // (((char*)data->componentData[type].data) + (ID * sizes[type]))
-#define GetECSData(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]]
-#define SetECSData(entData, ID, type, val, valType) GetECSData(entData, ID, type, valType) = val;
+#define AddComponent(entData, ID, type, val, valType)  \
+    do {    \
+    (entData)->componentData[type].dense[(entData)->componentData[type].count] = ID; \
+    (entData)->componentData[type].sparse[ID] = (entData)->componentData[type].count; \
+    ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].count] = val;         \
+    ++(entData)->componentData[type].count; }while(0) \
+
 //((valType *)((entData)->componentData[type].data))[ID];
 
 /* fix these later!

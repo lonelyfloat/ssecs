@@ -32,7 +32,7 @@ void FreeEntityData(EntityData *data)
 
 bool HasComponent(EntityData *data, ComponentType type, EntityID ID)
 {
-    return (data->componentData[type].sparse[ID] < data->componentData[type].count && (data->componentData[type].dense[data->componentData[type].sparse[ID]] == ID));
+    return ((data->componentData[type].sparse[ID] < data->componentData[type].count) && (data->componentData[type].dense[data->componentData[type].sparse[ID]] == ID));
 }
 
 /* TODO: fix these!

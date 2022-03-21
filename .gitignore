@@ -2,4 +2,3 @@ builds/
 assets/
 .vscode/
 Makefile
-.gitignore

@@ -37,9 +37,7 @@ bool HasComponent(EntityData *data, ComponentType type, EntityID ID);
     (entData)->componentData[type].dense[(entData)->componentData[type].count] = ID;                   \
     (entData)->componentData[type].sparse[ID] = (entData)->componentData[type].count;                  \
     ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].count] = val;       \
-    ++(entData)->componentData[type].count;}while(0) 
-
-// systems
+    ++(entData)->componentData[type].count;} while(0) 
 
 #endif
 

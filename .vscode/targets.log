@@ -9,7 +9,7 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Mon Mar 21 17:12:43 2022
+# Make data base, printed on Mon Mar 21 17:21:08 2022
 
 # Variables
 
@@ -25,10 +25,11 @@ OUTPUT = $(PROJECT_NAME).exe
 LC_ALL = C
 # environment
 _MSYS2_BASH = C:\tools\msys64\usr\bin\bash.exe
+ 
 # environment
 OCULUSBASE = C:\Program Files\Oculus\
 # makefile (from 'Makefile', line 2)
-PROJECT_NAME = game
+PROJECT_NAME = demo
 # environment
 USERPROFILE = C:\Users\super
 # environment
@@ -167,6 +168,7 @@ MAKEFILES :=
 _MSYS2_PREFIX = x86_64
 # environment
 PROMPT = $P$G
+ 
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132745520912869422
 # environment
@@ -250,7 +252,6 @@ MIC_LD_LIBRARY_PATH = c:\Program Files (x86)\Common Files\Intel\Shared Libraries
 # environment
 PROCESSOR_REVISION = 9e0d
 # environment
- 
 CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
@@ -263,9 +264,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
 
 # Directories
 
-# . (device 2392842953, inode 45598946227135358): 14 files, no impossibilities.
+# . (device 2392842953, inode 45598946227135358): 10 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,12 +279,12 @@ debug:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 13):
-	gcc $(SOURCE_FILES) -o $(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm
+	gcc $(SOURCE_FILES) -o builds/$(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-20 19:13:05.1414838
+#  Last modified 2022-03-21 17:20:37.5886809
 #  File has been updated.
 #  Successfully updated.
 
@@ -305,14 +306,15 @@ release(windows):
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 16):
-	gcc -static -mwindows $(SOURCE_FILES) -o  $(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm
+	gcc -static -mwindows $(SOURCE_FILES) -o  builds/$(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm
 
 release(web):
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
-	emcc -static $(SOURCE_FILES) -o  $(PROJECT_NAME).html $(CFLAGS)$(WEBFLAGS) $(LDFLAGS)
+	emcc -static $(SOURCE_FILES) -o  builds/web/$(PROJECT_NAME).html $(CFLAGS)$(WEBFLAGS) $(LDFLAGS)
 
 # files hash-table stats:
 # Load=7/1024=1%, Rehash=0, Collisions=0/17=0%
@@ -322,12 +324,12 @@ release(web):
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 179 B / avg = 8 B
-# current buf: size = 8162 B / used = 179 B / count = 21 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 142 B / avg = 8 B
+# current buf: size = 8162 B / used = 142 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 28 / hit rate = 25%
+# strcache performance: lookups = 24 / hit rate = 29%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Mon Mar 21 17:12:43 2022
+# Load=17/8192=0%, Rehash=0, Collisions=0/24=0%
+# Finished Make data base on Mon Mar 21 17:21:08 2022
 
  

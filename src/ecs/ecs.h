@@ -1,6 +1,7 @@
 #ifndef H_ENTITY
 #define H_ENTITY
 
+#include <stdlib.h>
 #include <stdint.h>
 #include <raylib.h>
 

@@ -35,6 +35,11 @@
             "cwd": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS",
             "binaryPath": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS\\game.exe",
             "binaryArgs": []
+        },
+        {
+            "cwd": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS\\builds",
+            "binaryPath": "c:\\Users\\super\\OneDrive\\Desktop\\Programming\\Gamedev\\raylib\\WIP\\ECS\\builds\\game.exe",
+            "binaryArgs": []
         }
     ]
 }

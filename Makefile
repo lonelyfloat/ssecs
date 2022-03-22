@@ -1,4 +1,4 @@
-SOURCE_FILES ?= src/demo/systems.c src/ecs/ecs.c src/demo/main.c
+SOURCE_FILES ?= src/demo/systems.c src/ecs/ssecs.c src/demo/main.c
 PROJECT_NAME ?= demo
 
 CFLAGS ?= -Os -std=c99 -Wall -Isrc -Lsrc/demo/lib/
@@ -7,15 +7,17 @@ PCFLAGS = desktop -DPLATFORM_DESKTOP
 RAYLIB_LOC = src/lib/desktop
 LDFLAGS ?= -lraylib
 OUTPUT ?= $(PROJECT_NAME).exe
+
 CC = cc
 ifeq ($(OS), Windows_NT)
 	CC = gcc
 endif
+
 build lib(desktop):
-	$(CC) -c -static src/ecs/ecs.c -Os -std=c99 -Wall &&  ar -rc libc-ray2D.a c-ray2D.o 
+	$(CC) -c -static src/ecs/ssecs.c -Os -std=c99 -Wall &&  ar -rc libssecs.a ssecs.o 
 
 build lib(web):
-	emcc -c src/c-ray2D.c -Os -std=c99 -Wall && emar rcs libc-ray2D.a c-ray2D.o 
+	emcc -c -static src/ecs/ssecs.c -Os -std=c99 -Wall && emar rcs ssecs.a ssecs.o 
 
 build demo(windows):
 	gcc -static -mwindows $(SOURCE_FILES) -o  builds/$(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm

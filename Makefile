@@ -7,13 +7,15 @@ PCFLAGS = desktop -DPLATFORM_DESKTOP
 RAYLIB_LOC = src/lib/desktop
 LDFLAGS ?= -lraylib
 OUTPUT ?= $(PROJECT_NAME).exe
-
-
-build lib(windows):
-	ar 
+CC = cc
+ifeq ($(OS), Windows_NT)
+	CC = gcc
+endif
+build lib(desktop):
+	$(CC) -c -static src/ecs/ecs.c -Os -std=c99 -Wall &&  ar -rc libc-ray2D.a c-ray2D.o 
 
 build lib(web):
-	emar
+	emcc -c src/c-ray2D.c -Os -std=c99 -Wall && emar rcs libc-ray2D.a c-ray2D.o 
 
 build demo(windows):
 	gcc -static -mwindows $(SOURCE_FILES) -o  builds/$(PROJECT_NAME).exe $(CFLAGS)$(PCFLAGS) $(LDFLAGS) -lopengl32 -lgdi32 -lwinmm

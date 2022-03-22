@@ -1,6 +1,6 @@
-#include <raylib.h>
-#include "ecs/ecs.h"
-#include "ecs/components.h"
+#include "include/raylib.h"
+#include "ecs/ssecs.h"
+#include "components.h"
 
 #ifdef __EMSCRIPTEN__
     #include <emscripten/emscripten.h>

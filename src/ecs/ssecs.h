@@ -33,6 +33,11 @@ void FreeEntityData(EntityData *data);
 
 bool HasComponent(EntityData *data, ComponentType type, EntityID ID);
 
+#define GetComponentFromIndex(entData, index, type, valType) ((valType*)(entData)->componentData[type].data)[index]
+// Input index (found in sparse), gives data                                 
+#define GetComponentFromID(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]]                                                     
+// Input Entity ID (found in dense), gives data
+
 #define AddComponent(entData, ID, type, val, valType)                                                  \
     do {                                                                                               \
     (entData)->componentData[type].dense[(entData)->componentData[type].count] = ID;                   \

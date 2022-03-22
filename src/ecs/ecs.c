@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "ecs.h"
+#include "ssecs.h"
 
 
 void InitEntityData(EntityData *data, uint32_t entityCount, uint8_t componentCount, size_t sizes[])

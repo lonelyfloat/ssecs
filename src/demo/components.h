@@ -1,7 +1,7 @@
 #ifndef H_COMPONENTS
 #define H_COMPONENTS
 
-#include "ecs.h"
+#include <ecs/ssecs.h>
 
 typedef struct MoveComponent
 {

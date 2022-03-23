@@ -5,18 +5,12 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-typedef uint32_t EntityID;
-
-typedef enum ComponentType
-{
-    COMPONENT_POSITION,
-    COMPONENT_DRAW,
-    COMPONENT_MOVE,
-} ComponentType;
+typedef uint32_t EntityID; 
+typedef uint8_t ComponentID;
 
 typedef struct ComponentData
 {
-    void* data;       // Component data
+    void* data;       // Component data array
     EntityID *dense;  // Get IDs by using index here
     EntityID *sparse; // Get indices by using ID here
     uint32_t count;   // how many elements there are in dense array
@@ -24,19 +18,19 @@ typedef struct ComponentData
 
 typedef struct EntityData
 {
-    uint8_t componentCount;
+    ComponentID componentCount;
     ComponentData* componentData;
 } EntityData;
 
-void InitEntityData(EntityData *data, uint32_t entityCount, uint8_t componentCount, size_t sizes[]);
+void InitEntityData(EntityData *data, uint32_t maxEntities, ComponentID componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
-bool HasComponent(EntityData *data, ComponentType type, EntityID ID);
+bool HasComponent(EntityData *data, ComponentID type, EntityID ID);
 
 #define GetComponentFromIndex(entData, index, type, valType) ((valType*)(entData)->componentData[type].data)[index]
 // Input index (found in sparse), gives data                                 
 #define GetComponentFromID(entData, ID, type, valType) ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].sparse[ID]]                                                     
-// Input Entity ID (found in dense), gives data
+// Input Entity ID (found in dense array), gives data
 
 #define AddComponent(entData, ID, type, val, valType)                                                  \
     do {                                                                                               \

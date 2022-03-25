@@ -39,6 +39,17 @@ bool HasComponent(EntityData *data, ComponentID type, EntityID ID);
     ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].count] = val;       \
     ++(entData)->componentData[type].count;} while(0) 
 
+#define RemoveComponent(entData, ID, type, valType)  \
+    do     {                                                \
+     if(HasComponent(entData, type, ID))                                                            \
+     {                                                                                              \
+         --(entData)->componentData[type].count;                                                    \
+        EntityID item = (entData)->componentData[type].dense[(entData)->componentData[type].count]; \
+        EntityID denseIndex = (entData)->componentData[type].sparse[ID];                            \
+        (entData)->componentData[type].dense[denseIndex] = item;                                    \
+        (entData)->componentData[type].sparse[item] = denseIndex;                                   \
+     }                                                                                              \
+    } while(0)
 #endif
 
 

@@ -13,7 +13,7 @@ typedef struct ComponentData
     void* data;       // Component data array
     EntityID *dense;  // Get IDs by using index here
     EntityID *sparse; // Get indices by using ID here
-    uint32_t count;   // how many elements there are in dense array
+    EntityID count;   // how many elements there are in dense array
 } ComponentData;
 
 typedef struct EntityData
@@ -22,7 +22,7 @@ typedef struct EntityData
     ComponentData* componentData;
 } EntityData;
 
-void InitEntityData(EntityData *data, uint32_t maxEntities, ComponentID componentCount, size_t sizes[]);
+void InitEntityData(EntityData *data, EntityID maxEntities, ComponentID componentCount, size_t sizes[]);
 void FreeEntityData(EntityData *data);
 
 bool HasComponent(EntityData *data, ComponentID type, EntityID ID);

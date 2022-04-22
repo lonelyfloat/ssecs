@@ -33,23 +33,27 @@ bool HasComponent(EntityData *data, ComponentID type, EntityID ID);
 // Input Entity ID (found in dense array), gives data
 
 #define AddComponent(entData, ID, type, val, valType)                                                  \
-    do {                                                                                               \
-    (entData)->componentData[type].dense[(entData)->componentData[type].count] = ID;                   \
-    (entData)->componentData[type].sparse[ID] = (entData)->componentData[type].count;                  \
-    ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].count] = val;       \
-    ++(entData)->componentData[type].count;} while(0) 
+    do     {                                                                                                                                                                                            \
+     if(!HasComponent(entData, type, ID))                                                                                                                                                               \
+     {                                                                                                                                                                                                  \
+        (entData)->componentData[type].dense[(entData)->componentData[type].count] = ID;                                                                                                                \
+        (entData)->componentData[type].sparse[ID] = (entData)->componentData[type].count;                                                                                                               \
+        ((valType*)(entData)->componentData[type].data)[(entData)->componentData[type].count] = val;                                                                                                    \
+        ++(entData)->componentData[type].count;                                                                                                                                                         \
+     }                                                                                                                                                                                                  \
+    } while(0)
 
 #define RemoveComponent(entData, ID, type, valType)  \
-    do     {                                                \
-     if(HasComponent(entData, type, ID))                                                            \
-     {                                                                                              \
-         --(entData)->componentData[type].count;                                                    \
-        EntityID item = (entData)->componentData[type].dense[(entData)->componentData[type].count]; \
-        EntityID denseIndex = (entData)->componentData[type].sparse[ID];                            \
-        (entData)->componentData[type].dense[denseIndex] = item;                                    \
-        (entData)->componentData[type].sparse[item] = denseIndex;                                   \
-     }                                                                                              \
+    do     {                                                                                                                                                                                            \
+     if(HasComponent(entData, type, ID))                                                                                                                                                                \
+     {                                                                                                                                                                                                  \
+        (entData)->componentData[type].dense[(entData)->componentData[type].sparse[ID]] = (entData)->componentData[type].dense[((entData)->componentData[type].count - 1)];                             \
+        ((valType*)((entData)->componentData[type].data))[(entData)->componentData[type].sparse[ID]] = ((valType*)((entData)->componentData[type].data))[((entData)->componentData[type].count - 1)];   \
+        (entData)->componentData[type].sparse[(entData)->componentData[type].dense[((entData)->componentData[type].count - 1)]] = (entData)->componentData[type].sparse[ID];                            \
+        --(entData)->componentData[type].count;                                                                                                                                                         \
+     }                                                                                                                                                                                                  \
     } while(0)
+
 #endif
 
 

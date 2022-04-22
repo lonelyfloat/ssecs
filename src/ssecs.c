@@ -17,13 +17,13 @@ void InitEntityData(EntityData *data, uint32_t maxEntities, ComponentID componen
 
 void FreeEntityData(EntityData *data)
 {
-    free(data->componentData);
     for (int i = 0; i < data->componentCount; ++i)
     {
         free(data->componentData[i].dense);
         free(data->componentData[i].sparse);
         free(data->componentData[i].data);
     }
+    free(data->componentData);
 }
 
 bool HasComponent(EntityData *data, ComponentID type, EntityID ID)

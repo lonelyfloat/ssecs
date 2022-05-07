@@ -20,6 +20,7 @@ typedef struct EntityData
 {
     ComponentID componentCount;
     ComponentData* componentData;
+    EntityID maxEntities;
 } EntityData;
 
 void InitEntityData(EntityData *data, EntityID maxEntities, ComponentID componentCount, size_t sizes[]);

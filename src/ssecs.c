@@ -4,14 +4,15 @@
 
 void InitEntityData(EntityData *data, uint32_t maxEntities, ComponentID componentCount, size_t sizes[])
 {
+    data->maxEntities = maxEntities;
     data->componentData = malloc(componentCount*sizeof(ComponentData));
     data->componentCount = componentCount;
     for(int i=0; i<componentCount; ++i)
     {
         data->componentData[i].count = 0;
-        data->componentData[i].dense = malloc(maxEntities*sizeof(EntityID));
-        data->componentData[i].sparse = malloc(maxEntities*sizeof(EntityID));
-        data->componentData[i].data = malloc(maxEntities*sizes[i]);
+        data->componentData[i].dense = malloc((maxEntities)*sizeof(EntityID));
+        data->componentData[i].sparse = malloc((maxEntities)*sizeof(EntityID));
+        data->componentData[i].data = malloc((maxEntities)*sizes[i]);
     }
 }
 

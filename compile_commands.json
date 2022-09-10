@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-gcc",
+      "-c",
+      "-Os",
+      "-std=c99",
+      "-Wall",
+      "src/ssecs.c"
+    ],
+    "directory": "/home/lonelyfloat/dev/C/ssecs",
+    "file": "/home/lonelyfloat/dev/C/ssecs/src/ssecs.c"
+  }
+]
